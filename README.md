@@ -1,89 +1,86 @@
 # 🌍 Groundwater Level Prediction using Machine Learning
 
-## 📌 Overview
-
-This project predicts **monthly groundwater levels** using Machine Learning, Remote Sensing, and Hydro-Meteorological data. The model learns relationships between climate variables, vegetation indices, soil moisture, rainfall patterns, and historical groundwater observations to forecast groundwater fluctuations.
-
-The project also incorporates **Explainable AI (SHAP)** to understand the factors driving groundwater level changes.
+> Predicting monthly groundwater levels using hydro-meteorological variables, remote sensing indices, and temporal feature engineering.
 
 ---
 
-## 🚀 Features
+## 🚀 Project Overview
 
-- Groundwater Level Forecasting
-- Temporal Feature Engineering using Lag Features
-- Remote Sensing Data Integration
-- Explainable AI using SHAP
-- Comparative Machine Learning Analysis
-- End-to-End Prediction Pipeline
+Groundwater is a critical freshwater resource for agriculture, industry, and domestic use. Accurate groundwater forecasting helps in sustainable water resource management and drought preparedness.
+
+This project uses Machine Learning techniques along with Remote Sensing and Climate Data to predict monthly groundwater levels.
 
 ---
 
-## 📊 Dataset Features
+## 📊 Features Used
 
-### Input Variables
+### Climate Variables
+- Evapotranspiration (ET)
+- Relative Humidity (RH)
+- Wind Speed
+- Average Temperature
 
-| Feature | Description |
-|----------|-------------|
-| Latitude | Geographic Coordinate |
-| ET_Mon | Monthly Evapotranspiration |
-| RH_Mon | Monthly Relative Humidity |
-| Wind_Mon | Monthly Wind Speed |
-| NDVI_Mon | Vegetation Index |
-| NDMI_Mon | Moisture Index |
-| SM_100cm_Mon | Soil Moisture at 100 cm Depth |
-| GWL_lag_1 | Previous Month Groundwater Level |
-| GWL_lag_2 | Groundwater Level Two Months Earlier |
-| Rain_lag_1 | Previous Month Rainfall |
-| Rain_lag_2 | Rainfall Two Months Earlier |
-| Rain_roll3 | Three-Month Rolling Rainfall Average |
-| Temp_Avg | Average Monthly Temperature |
+### Remote Sensing Variables
+- NDVI (Normalized Difference Vegetation Index)
+- NDMI (Normalized Difference Moisture Index)
+
+### Soil Variables
+- Soil Moisture (100 cm depth)
+
+### Temporal Features
+- GWL_lag_1
+- GWL_lag_2
+- Rain_lag_1
+- Rain_lag_2
+- Rain_roll3
+
+### Spatial Feature
+- Latitude
 
 ### Target Variable
-
-```text
-GWL_Mon (Monthly Groundwater Level)
-```
+- GWL_Mon (Groundwater Level)
 
 ---
 
-## ⚙️ Workflow
+## 🔄 Project Workflow
 
 ```text
 Data Collection
-        ↓
+      ↓
 Data Cleaning
-        ↓
-Missing Value Treatment
-        ↓
+      ↓
+Missing Value Handling
+      ↓
 Feature Engineering
-        ↓
+      ↓
 Lag Feature Generation
-        ↓
+      ↓
 Model Training
-        ↓
+      ↓
 Model Evaluation
-        ↓
+      ↓
 SHAP Analysis
-        ↓
+      ↓
 Groundwater Prediction
 ```
 
----
-
-## 🧠 Models Used
+## 🤖 Machine Learning Models
 
 ### Random Forest Regressor
 
-An ensemble learning model that combines multiple decision trees to improve prediction stability and reduce overfitting.
+- Ensemble-based learning algorithm
+- Handles non-linear relationships effectively
+- Provides feature importance scores
 
 ### XGBoost Regressor
 
-A gradient boosting model capable of capturing complex nonlinear relationships in groundwater systems.
+- Gradient boosting framework
+- High predictive performance
+- Efficient handling of tabular datasets
 
 ---
 
-## 📈 Results
+## 📈 Model Performance
 
 | Model | R² Score |
 |---------|---------|
@@ -93,26 +90,27 @@ A gradient boosting model capable of capturing complex nonlinear relationships i
 ### Random Forest Metrics
 
 | Metric | Value |
-|----------|----------|
+|---------|---------|
 | MAE | 2.365 |
 | MSE | 9.760 |
 | RMSE | 3.124 |
 
 ---
 
-## 🔍 Explainable AI
+## 🧠 Explainable AI
 
 SHAP (SHapley Additive Explanations) was used to:
 
-- Interpret model predictions
-- Identify influential groundwater drivers
-- Improve transparency and trust in the model
+- Understand model predictions
+- Identify influential features
+- Improve model transparency
+- Interpret groundwater drivers
 
 ---
 
 ## 🛠️ Technology Stack
 
-```text
+```python
 Python
 Pandas
 NumPy
@@ -134,20 +132,13 @@ Groundwater-Level-Prediction/
 ├── data/
 │
 ├── notebooks/
-│   └── model_training.ipynb
-│
-├── models/
-│   └── best_model.pkl
+│   └── water2222222.ipynb
 │
 ├── results/
+│   ├── correlation_heatmap.png
 │   ├── feature_importance.png
 │   ├── shap_summary.png
-│   └── prediction_plot.png
-│
-├── src/
-│   ├── preprocessing.py
-│   ├── train.py
-│   └── predict.py
+│   └── actual_vs_predicted.png
 │
 ├── README.md
 ├── requirements.txt
@@ -156,7 +147,11 @@ Groundwater-Level-Prediction/
 
 ---
 
-## 📷 Visualizations
+## 📷 Results
+
+### Correlation Analysis
+
+![Correlation Heatmap](results/correlation_heatmap.png)
 
 ### Feature Importance
 
@@ -166,31 +161,36 @@ Groundwater-Level-Prediction/
 
 ![SHAP Summary](results/shap_summary.png)
 
-### Actual vs Predicted
+### Actual vs Predicted Groundwater Levels
 
-![Prediction Plot](results/prediction_plot.png)
-
----
-
-## 🎯 Key Contributions
-
-- Developed groundwater prediction models using climatic and remote sensing variables.
-- Created lag-based temporal features to capture groundwater memory effects.
-- Applied explainable AI techniques for model interpretation.
-- Evaluated and compared multiple machine learning approaches.
+![Prediction Plot](results/actual_vs_predicted.png)
 
 ---
 
-## 🔮 Future Improvements
+## ✨ Key Contributions
+
+- Integrated Remote Sensing and Climate Variables
+- Developed Lag-Based Temporal Features
+- Compared Multiple Machine Learning Models
+- Applied Explainable AI for Model Interpretation
+- Built an End-to-End Groundwater Prediction Pipeline
+
+---
+
+## 🔮 Future Scope
 
 - Physics-Informed Neural Networks (PINNs)
-- LSTM-based Groundwater Forecasting
-- Real-Time Monitoring Dashboard
-- Satellite Data Expansion
-- Digital Twin Groundwater System
+- LSTM-Based Time Series Forecasting
+- Real-Time Groundwater Monitoring Dashboard
+- Digital Twin for Groundwater Systems
+- Integration of Additional Satellite Datasets
 
 ---
 
 ## 👨‍💻 Author
 
-Machine Learning project focused on sustainable groundwater resource management through data-driven modeling and explainable AI.
+Ak R
+
+B.Tech Computer Science Engineering
+
+Machine Learning | Remote Sensing | Groundwater Analytics
