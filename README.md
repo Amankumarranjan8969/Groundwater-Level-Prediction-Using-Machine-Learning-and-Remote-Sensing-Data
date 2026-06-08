@@ -78,24 +78,49 @@ Groundwater Prediction
 - High predictive performance
 - Efficient handling of tabular datasets
 
----
 
-## 📈 Model Performance
+### CatBoost Regressor
 
-| Model | R² Score |
-|---------|---------|
-| Random Forest | 0.4067 |
-| XGBoost | 0.4134 |
+- Gradient boosting framework optimized for tabular data
+- Captures complex nonlinear relationships effectively
+- Robust performance on small datasets
+- Reduces overfitting using ordered boosting
+- Handles missing values efficiently
+- Achieved the highest predictive accuracy in this study
 
-### Random Forest Metrics
+## 📊 Model Performance
 
-| Metric | Value |
-|---------|---------|
-| MAE | 2.365 |
-| MSE | 9.760 |
-| RMSE | 3.124 |
+The performance of multiple ensemble machine learning models was evaluated for groundwater level prediction. Among all tested models, **CatBoost Regressor achieved the best predictive performance**, demonstrating its ability to capture complex nonlinear relationships within hydro-meteorological and remote sensing datasets.
 
----
+| Model | R² Score | MAE | MSE | RMSE |
+|---------|---------|---------|---------|---------|
+| Random Forest | 0.6847 | 1.8414 | 5.1869 | 2.2775 |
+| XGBoost | 0.6631 | 1.7954 | 5.5420 | 2.3541 |
+| CatBoost | **0.8008** | **1.4531** | **3.2762** | **1.8100** |
+
+### 🏆 Best Performing Model
+
+**CatBoost Regressor**
+
+- Highest R² Score: **0.8008**
+- Lowest MAE: **1.4531**
+- Lowest MSE: **3.2762**
+- Lowest RMSE: **1.8100**
+
+### 📈 Performance Summary
+
+```text
+CatBoost      ████████████████████ 0.8008
+Random Forest █████████████████    0.6847
+XGBoost       ████████████████     0.6631
+```
+
+### 🔍 Interpretation
+
+- CatBoost achieved the highest predictive accuracy among all evaluated models.
+- The model effectively captured nonlinear relationships between groundwater levels and environmental variables.
+- Temporal lag features significantly improved forecasting performance by incorporating historical groundwater behavior.
+- The results demonstrate the potential of combining machine learning, remote sensing, and hydro-meteorological data for groundwater forecasting and digital twin development.
 
 ## 🧠 Explainable AI
 
@@ -189,8 +214,8 @@ Groundwater-Level-Prediction/
 
 ## 👨‍💻 Author
 
-Ak R
+Aman kumar ranjan
 
-B.Tech Computer Science Engineering
+B.Tech Computer Science Engineering (Data science)
 
 Machine Learning | Remote Sensing | Groundwater Analytics
